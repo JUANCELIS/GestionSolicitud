@@ -46,13 +46,6 @@
 
                 </li>
 
-                <!-- Divider -->
-                <li class="nav-item active">
-                    <a class="nav-link" href="realizar-solicitud.html">
-                        <i class="fas fa-fw fa-folder"></i>
-                        <span>Realizar Solicitud</span></a>
-                </li>
-                <hr class="sidebar-divider">
 
                 <li class="nav-item active">
                     <a class="nav-link" href="historialusuario.html">
@@ -73,54 +66,7 @@
                 <div id="content">
 
                     <!-- Topbar -->
-                    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                        <h1 class="h3 mb-4 text-gray-900">REALIZAR SOLICITUD</h1>
-                        <!-- Sidebar Toggle (Topbar) -->
-                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                            <i class="fa fa-bars"></i>
-                        </button>
-
-                        <!-- Topbar Navbar -->
-                        <ul class="navbar-nav ml-auto">
-
-                            <!-- Nav Item - Alerts -->
-
-
-                            <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                 aria-labelledby="alertsDropdown">
-
-
-
-
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-                            </div>
-                            </li>
-
-                            <div class="topbar-divider d-none d-sm-block"></div>
-
-                            <!-- Nav Item - User Information -->
-                            <li class="nav-item dropdown no-arrow">
-                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuario</span>
-                                    <img class="img-profile rounded-circle"
-                                         src="img/undraw_profile.svg">
-                                </a>
-                                <!-- Dropdown - User Information -->
-                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                     aria-labelledby="userDropdown">
-
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Logout
-                                    </a>
-                                </div>
-                            </li>
-
-                        </ul>
-
+ 
                     </nav>
                     <!-- End of Topbar -->
 
@@ -130,7 +76,7 @@
 
                             <!-- Page Heading -->
                             <form action="administrador.jsp" method="post" >
-                                <label>SOLICITUD: </label><br>
+                                <label>REALICE SU SOLICITUD: </label><br>
                                 <input class="controles" type="text" size="8" maxlength="10" value="10000001" name="codigo">
                                 <br>
                                 <label>FECHA: </label><br>
