@@ -9,7 +9,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Realizar Solicitud</title>
+        <title>Historial Administrador</title>
 
         <!-- Custom fonts for this template-->
         <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -41,7 +41,7 @@
 
     <!--font awesome con CDN-->  
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">  
-
+    <link href="../css/stilo.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -57,7 +57,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">ADMIN</div>
+                <div class="sidebar-brand-text mx-3">Administrador</div>
             </a>
 
             <!-- Divider -->
@@ -91,7 +91,7 @@
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                    <h1 class="h3 mb-4 text-gray-900"> HISTORIAL </h1>
+                    <h1 class="h3 mb-4 text-gray-900"> SOLICITUDES </h1>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -141,29 +141,29 @@
                                     String asunto = request.getParameter("asunto");
                                     String ob = request.getParameter("observaciones");
                                 %>              
+                                <section class ="form-admin-historial">
+                                    <form >
+                                        <table id="tabla" class="table table-striped table-bordered" cellspacing="0" name="tabla" BORDER WIDTH="100%" aling="center">
+                                            <thead>
+                                                <TR>
+                                                    <TH>FECHA</TH>
+                                                    <TH>SOLICITUD</TH>
+                                                    <TH>ASUNTO</TH>
+                                                    <TH>ACCIONES </TH>
+                                                </TR>
+                                            </thead>
+                                            <tbody
+                                                <TR>
+                                            <TD><%=fecha%></TD>
+                                            <TD> <%=cod%></TD>       
+                                            <TD><%=asunto%></TD>
+                                            <TD> <button class = "boton" >Ver mas</button></TD>
+                                            </TR>                           
+                                            </tbody>
+                                        </table>
 
-                                <form >
-                                    <table id="tabla" class="table table-striped table-bordered" cellspacing="0" name="tabla" BORDER WIDTH="100%" aling="center">
-                                        <thead>
-                                            <TR>
-                                                <TH>SOLICITUD</TH>
-                                                <TH>FECHA</TH>
-                                                <TH>ASUNTO</TH>
-                                                <TH>ESTADO</TH>
-                                            </TR>
-                                        </thead>
-                                        <tbody
-                                            <TR>
-                                        <TD> <%=cod%></TD>
-                                        <TD><%=fecha%></TD>
-                                        <TD><%=asunto%></TD>
-                                        <TD> <%=ob%> </TD>
-                                        </TR>                           
-                                        </tbody>
-                                    </table>
-                                        
-                                </form>        
-                                        
+                                    </form>        
+                                </section>
                             </div>
                         </div>
                         <!-- /.container-fluid -->
@@ -171,15 +171,7 @@
                 </div>
                 <!-- End of Main Content -->
 
-                <!-- Footer -->
-                <footer class="sticky-footer bg-white">
-                        <div class="container my-auto">
-                            <div class="copyright text-center my-auto">
-                                <span>Copyright &copy; Juan Diego Celis 2021</span>
-                            </div>
-                        </div>
-                    </footer>
-                <!-- End of Footer -->
+
 
             </div>
             <!-- End of Content Wrapper -->

@@ -9,7 +9,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Realizar Solicitud</title>
+        <title>Historial Usuario</title>
 
         <!-- Custom fonts for this template-->
         <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -20,6 +20,7 @@
         <!-- Custom styles for this template-->
         <link href="../css/sb-admin-2.min.css" rel="stylesheet">
         <link href="../css/stilo.css" rel="stylesheet">
+
     </head>
 
     <body id="page-top">
@@ -31,7 +32,7 @@
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 <!-- Sidebar - Brand -->
-                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="administrador.html">
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="administrador.jsp">
                     <div class="sidebar-brand-icon rotate-n-15">
                         <i class="fas fa-laugh-wink"></i>
                     </div>
@@ -72,9 +73,10 @@
                 <!-- Main Content -->
                 <div id="content">
 
+
                     <!-- Topbar -->
                     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                        <h1 class="h3 mb-4 text-gray-900">REALIZAR SOLICITUD</h1>
+                        <h1 class="h3 mb-4 text-gray-900"> MIS SOLICITUDES</h1>
                         <!-- Sidebar Toggle (Topbar) -->
                         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                             <i class="fa fa-bars"></i>
@@ -84,18 +86,7 @@
                         <ul class="navbar-nav ml-auto">
 
                             <!-- Nav Item - Alerts -->
-
-
-                            <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                 aria-labelledby="alertsDropdown">
-
-
-
-
-                                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-                            </div>
-                            </li>
+                       
 
                             <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -103,14 +94,13 @@
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Usuario</span>
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">JUAN CELIS</span>
                                     <img class="img-profile rounded-circle"
                                          src="img/undraw_profile.svg">
                                 </a>
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                      aria-labelledby="userDropdown">
-
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -125,31 +115,30 @@
                     <!-- End of Topbar -->
 
                     <!-- Begin Page Content -->
-                    <section class ="form-admin"> 
-                        <div class="container-fluid">
+                    <div class="container-fluid">
 
-                            <!-- Page Heading -->
-                            <form action="administrador.jsp" method="post" >
-                                <label>SOLICITUD: </label><br>
-                                <input class="controles" type="text" size="8" maxlength="10" value="10000001" name="codigo">
-                                <br>
-                                <label>FECHA: </label><br>
-                                <input class="controles" type="date" name="fecha" >
-                                <br>
-                                <label>ASUNTO: </label><br>
-                                <input class="controles" type="text" size="30" maxlength="60" value="" name="asunto">
-                                <br>
-                                <label>MENSAJE: </label><br>
-                                <textarea class="controles" name="texto" rows="4" cols="40" placeholder="Escriba su mensaje aquí"></textarea>
-                                <br>
-                                <input class="boton" type="submit" name="btnEnviar"  value="Enviar">  
-                                <input class="boton" type="reset" name="btnBorar" value="Borrar">
-                            </form>
-                        </div>
-                        <!-- /.container-fluid -->
+                        <!-- Page Heading -->
+                        <section class ="form-admin-historial">
+                            <TABLE BORDER WIDTH="100%">
+                                <TR>
+                                    <TH>FECHA</TH>
+                                    <TH>SOLICITUD</TH>
+                                    <TH>ASUNTO</TH>
+                                    <TH>ESTADO</TH>
+
+                                </TR>
+                                <TR>
+                                    <TD> 2021/03/13 </TD>
+                                    <TD> 1000000000</TD>
+                                    <TD> pelea de perros</TD>
+                                    <TD> <button class="botonestado"  > estado </button> </TD>
+                                </TR>
+                            </TABLE>
+                        </section>
+                    </div>
+                    <!-- /.container-fluid -->
 
                 </div>
-                </section>
                 <!-- End of Main Content -->
 
                 <!-- Footer -->
@@ -181,7 +170,7 @@
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
                         <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
+                            <span aria-hidden="true">Ã—</span>
                         </button>
                     </div>
                     <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
