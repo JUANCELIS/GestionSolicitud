@@ -22,7 +22,6 @@ public class DemoDb {
     }
      public static void testUsuario(){
         UsuarioDAO user = new UsuarioDAO();
-        //user.create(new Usuario("Johnny","Quintero","johnny@ufps","LoMasRicolinoDeLaUFPS"));
         ArrayList<Usuario> users = new ArrayList();
         users = user.read();
         for(Usuario aux:users){

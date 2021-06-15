@@ -12,10 +12,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-/**
- *
- * @author JHONY QUINTERO
- */
+
 public class UsuarioDAO {
 
     public void create(Usuario user) {

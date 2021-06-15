@@ -66,7 +66,7 @@
                 <div id="content">
 
                     <!-- Topbar -->
- 
+
                     </nav>
                     <!-- End of Topbar -->
 
@@ -76,17 +76,28 @@
 
                             <!-- Page Heading -->
                             <form action="administrador.jsp" method="post" >
-                                <label>REALICE SU SOLICITUD: </label><br>
+                                <label>REALICE SU SOLICITUD: </label>
+                                <br>
                                 <input class="controles" type="text" size="8" maxlength="10" value="10000001" name="codigo">
+                                <br>
+                                <label>TIPO DE SOLICITUD: </label>
+                                <br>
+                                <select class="controles" name="menu">
+                                    <option>Peticion</option>
+                                    <option>Queja</option>
+                                    <option>Reclamo</option>
+                                </select>
                                 <br>
                                 <label>FECHA: </label><br>
                                 <input class="controles" type="date" name="fecha" >
                                 <br>
                                 <label>ASUNTO: </label><br>
-                                <input class="controles" type="text" size="30" maxlength="60" value="" name="asunto">
+                                <input class="controles" type="text" required size="30" maxlength="60" value="" name="asunto" >
                                 <br>
                                 <label>MENSAJE: </label><br>
-                                <textarea class="controles" name="texto" rows="4" cols="40" placeholder="Escriba su mensaje aquí"></textarea>
+                                <textarea class="controles" name="texto" required rows="4" cols="40" placeholder="Escriba su mensaje aquí" ></textarea>
+                                <br>
+                                
                                 <br>
                                 <input class="boton" type="submit" name="btnEnviar"  value="Enviar">  
                                 <input class="boton" type="reset" name="btnBorar" value="Borrar">

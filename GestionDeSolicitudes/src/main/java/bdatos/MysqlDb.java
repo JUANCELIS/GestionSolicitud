@@ -16,7 +16,8 @@ public class MysqlDb {
  
      public Connection getConnection() {
            try {
-               String connectionString = "jdbc:mysql://localhost:3306/solicitud?user=root";
+               
+               String connectionString = "jdbc:mysql://localhost:3310/gestionsolicitud?user=root";
                Connection connection = DriverManager.getConnection(connectionString);
                System.out.println("Se Establecio conexión");
                return connection;

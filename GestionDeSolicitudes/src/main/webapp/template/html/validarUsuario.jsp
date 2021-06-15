@@ -11,8 +11,7 @@
 <%
     String email= request.getParameter("email");
     String clav = request.getParameter("clave");
-    System.out.println("SIIIIIIIIIIIIIIIIIIIIUUUUUUUUUUUUUUUUUUUUUUUUU");
-    System.out.println(email + " " + clav);
+
     UsuarioDAO user = new UsuarioDAO();
     ArrayList<Usuario> users = new ArrayList();
     users = user.read();
