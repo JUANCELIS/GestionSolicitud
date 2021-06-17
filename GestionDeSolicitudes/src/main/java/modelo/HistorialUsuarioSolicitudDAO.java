@@ -5,7 +5,7 @@
  */
 package modelo;
 
-import bdatos.Conexion;
+import bdatos.Conexion2;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,8 +19,8 @@ import java.util.ArrayList;
 public class HistorialUsuarioSolicitudDAO {
 
     public void create(HistorialUsuarioSolicitud solicitud) {
-        Conexion mysqlDb = new Conexion();
-        Connection connection = mysqlDb.getConnection();
+        Conexion2 mysqlDb = new Conexion2();
+        Connection connection = mysqlDb.conectar();
         try {
             PreparedStatement statement = connection.prepareStatement("INSERT INTO hisotialusuario VALUES (?,?,?,?)");
             statement.setInt(1, solicitud.getId_solicitud());
@@ -36,8 +36,8 @@ public class HistorialUsuarioSolicitudDAO {
 
     public ArrayList<HistorialUsuarioSolicitud> read() {
         ArrayList<HistorialUsuarioSolicitud> solicitudes = new ArrayList();
-        Conexion mysqlDb = new Conexion();
-        Connection connection = mysqlDb.getConnection();
+        Conexion2 mysqlDb = new Conexion2();
+        Connection connection = mysqlDb.conectar();
         try {
             String sql = "SELECT * FROM historialinventario";
             Statement setencia = connection.prepareStatement(sql);
@@ -57,8 +57,8 @@ public class HistorialUsuarioSolicitudDAO {
     }
      public ArrayList<HistorialUsuarioSolicitud> read(int id) {
         ArrayList<HistorialUsuarioSolicitud> solicitudes = new ArrayList();
-        Conexion mysqlDb = new Conexion();
-        Connection connection = mysqlDb.getConnection();
+        Conexion2 mysqlDb = new Conexion2();
+        Connection connection = mysqlDb.conectar();
         try {
             String sql = "SELECT * FROM historialinventario WHERE idoslicitud = "+id;
             Statement setencia = connection.prepareStatement(sql);
@@ -78,8 +78,8 @@ public class HistorialUsuarioSolicitudDAO {
     }
     public void update(HistorialUsuarioSolicitud solicitud) {
 
-        Conexion mysqlDb = new Conexion();
-        Connection connection = mysqlDb.getConnection();
+        Conexion2 mysqlDb = new Conexion2();
+        Connection connection = mysqlDb.conectar();
         try {
             PreparedStatement statement = connection.prepareStatement("UPDATE usuario SET fecha = ?, asunto=?, mensaje = ? WHERE idsolicitud = ?");
             statement.setDate(1, solicitud.getFecha());
@@ -94,8 +94,8 @@ public class HistorialUsuarioSolicitudDAO {
     }
 
     public void delete(int id) {
-        Conexion mysqlDb = new Conexion();
-        Connection connection = mysqlDb.getConnection();
+        Conexion2 mysqlDb = new Conexion2();
+        Connection connection = mysqlDb.conectar();
         try {
             PreparedStatement statement = connection.prepareStatement("DELETE FROM hisorialusuario WHERE idsolicitud=?");
             statement.setInt(1, id);

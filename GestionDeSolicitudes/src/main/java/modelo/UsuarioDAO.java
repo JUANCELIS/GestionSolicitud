@@ -5,7 +5,7 @@
  */
 package modelo;
 
-import bdatos.Conexion;
+
 import bdatos.Conexion2;
 
 import java.sql.Connection;
@@ -78,8 +78,8 @@ public class UsuarioDAO {
     }
 
     public void delete(String correo_user) {
-        Conexion mysqlDb = new Conexion();
-        Connection connection = mysqlDb.getConnection();
+        Conexion2 mysqlDb = new Conexion2();
+        Connection connection = mysqlDb.conectar();
         try {
             PreparedStatement statement = connection.prepareStatement("DELETE FROM usuario WHERE correo_user=?");
             statement.setString(1, correo_user);

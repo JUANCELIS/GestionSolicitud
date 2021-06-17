@@ -5,7 +5,7 @@
  */
 package modelo;
 
-import bdatos.Conexion;
+import bdatos.Conexion2;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,8 +19,8 @@ import java.util.ArrayList;
 public class GestionSolicitudDAO {
 
     public void create(GestionSolicitud solicitud) {
-        Conexion mysqlDb = new Conexion();
-        Connection connection = mysqlDb.getConnection();
+        Conexion2 mysqlDb = new Conexion2();
+        Connection connection = mysqlDb.conectar();
         try {
             PreparedStatement statement = connection.prepareStatement("INSERT INTO gestionsolicitud VALUES (?,?,?)");
             statement.setString(1, solicitud.getEstadoSolicitud());
@@ -35,8 +35,8 @@ public class GestionSolicitudDAO {
 
     public ArrayList<GestionSolicitud> read() {
         ArrayList<GestionSolicitud> solicitudes = new ArrayList();
-        Conexion mysqlDb = new Conexion();
-        Connection connection = mysqlDb.getConnection();
+        Conexion2 mysqlDb = new Conexion2();
+        Connection connection = mysqlDb.conectar();
         try {
             String sql = "SELECT * FROM gestionsolicitud";
             Statement setencia = connection.prepareStatement(sql);
@@ -58,8 +58,8 @@ public class GestionSolicitudDAO {
 
     public void update(GestionSolicitud solicitud) {
 
-        Conexion mysqlDb = new Conexion();
-        Connection connection = mysqlDb.getConnection();
+        Conexion2 mysqlDb = new Conexion2();
+        Connection connection = mysqlDb.conectar();
         try {
             PreparedStatement statement = connection.prepareStatement("UPDATE gestionsolicitud SET estadosolicitud = ?, respuestasolicitud = ?, administrador = ? WHERE idsolicitud = ?");
             statement.setString(1, solicitud.getEstadoSolicitud());
@@ -73,8 +73,8 @@ public class GestionSolicitudDAO {
     }
 
     public void delete(int id) {
-        Conexion mysqlDb = new Conexion();
-        Connection connection = mysqlDb.getConnection();
+        Conexion2 mysqlDb = new Conexion2();
+        Connection connection = mysqlDb.conectar();
         try {
             PreparedStatement statement = connection.prepareStatement("DELETE FROM gestionsolicitud WHERE idsolicitud=?");
             statement.setInt(1, id);
