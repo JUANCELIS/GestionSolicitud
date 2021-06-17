@@ -10,14 +10,16 @@
 
 <%
     String email= request.getParameter("email");
-    String clav = request.getParameter("clave");
+    String clave = request.getParameter("clave");
 
+    System.out.println("email" + email + "clave" + clave);
+    
     UsuarioDAO user = new UsuarioDAO();
     ArrayList<Usuario> users = new ArrayList();
     users = user.read();
     boolean correcto = false;
     for (Usuario x : users) {
-        if (x.getContra1().equals(clav) && x.getCorreo().equals(email)) {
+        if (x.getContra1().equals(clave) && x.getCorreo().equals(email)) {
             correcto = true;
             
         }

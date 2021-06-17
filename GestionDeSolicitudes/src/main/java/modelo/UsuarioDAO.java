@@ -5,19 +5,20 @@
  */
 package modelo;
 
-import bdatos.MysqlDb;
+import bdatos.Conexion;
+import bdatos.Conexion2;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-
 public class UsuarioDAO {
 
     public void create(Usuario user) {
-        MysqlDb mysqlDb = new MysqlDb();
-        Connection connection = mysqlDb.getConnection();
+        Conexion2 mysqlDb = new Conexion2();
+        Connection connection = mysqlDb.conectar();
         try {
             PreparedStatement statement = connection.prepareStatement("INSERT INTO usuario VALUES (?,?,?,?)");
             statement.setString(1, user.getNombre());
@@ -31,32 +32,38 @@ public class UsuarioDAO {
         }
     }
 
-    public ArrayList<Usuario> read() {
+    public ArrayList<Usuario> read() throws Exception {
         ArrayList<Usuario> usuarios = new ArrayList();
-        MysqlDb mysqlDb = new MysqlDb();
-        Connection connection = mysqlDb.getConnection();
+        Conexion2 mysqlDb = new Conexion2();
+        Connection connection = mysqlDb.conectar();
         try {
+
             String sql = "SELECT * FROM usuario";
-            Statement setencia = connection.prepareStatement(sql);
+            PreparedStatement setencia = connection.prepareStatement(sql);
             ResultSet resultado = setencia.executeQuery(sql);
+
             while (resultado.next()) {
-                usuarios.add(new Usuario(resultado.getString("name"),
-                        resultado.getString("last_name"),
-                        resultado.getString("correo_user"),
-                        resultado.getString("password")));
+                System.out.println("entro al while");
+                usuarios.add(new Usuario(
+                        resultado.getString("nombre"),
+                        resultado.getString("apellido"),
+                        resultado.getString("correo"),
+                        resultado.getString("clave")));
             }
-        connection.close();   
+
+            connection.close();
         } catch (Exception e) {
             System.out.println(e.getMessage());
+            System.out.println("error en read usuarioDao" + connection);
+
         }
-        
         return usuarios;
     }
 
     public void update(Usuario user) {
 
-        MysqlDb mysqlDb = new MysqlDb();
-        Connection connection = mysqlDb.getConnection();
+        Conexion2 mysqlDb = new Conexion2();
+        Connection connection = mysqlDb.conectar();
         try {
             PreparedStatement statement = connection.prepareStatement("UPDATE usuario SET name = ?, last_name=?, password = ?WHERE correo_user = ?");
             statement.setString(1, user.getNombre());
@@ -71,7 +78,7 @@ public class UsuarioDAO {
     }
 
     public void delete(String correo_user) {
-        MysqlDb mysqlDb = new MysqlDb();
+        Conexion mysqlDb = new Conexion();
         Connection connection = mysqlDb.getConnection();
         try {
             PreparedStatement statement = connection.prepareStatement("DELETE FROM usuario WHERE correo_user=?");

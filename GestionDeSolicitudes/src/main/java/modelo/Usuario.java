@@ -13,6 +13,7 @@ import java.util.Objects;
  */
 public class Usuario {
     
+    int tipo;
     String nombre;
     String apellido;
     String correo;
@@ -24,7 +25,14 @@ public class Usuario {
         this.correo = correo;
         this.contra1 = contra1;
     }
+    
+        public int getTipo() {
+        return tipo;
+    }
 
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
+    }
     public String getNombre() {
         return nombre;
     }

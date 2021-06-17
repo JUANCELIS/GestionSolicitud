@@ -5,7 +5,7 @@
  */
 package modelo;
 
-import bdatos.MysqlDb;
+import bdatos.Conexion;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class GestionSolicitudDAO {
 
     public void create(GestionSolicitud solicitud) {
-        MysqlDb mysqlDb = new MysqlDb();
+        Conexion mysqlDb = new Conexion();
         Connection connection = mysqlDb.getConnection();
         try {
             PreparedStatement statement = connection.prepareStatement("INSERT INTO gestionsolicitud VALUES (?,?,?)");
@@ -35,7 +35,7 @@ public class GestionSolicitudDAO {
 
     public ArrayList<GestionSolicitud> read() {
         ArrayList<GestionSolicitud> solicitudes = new ArrayList();
-        MysqlDb mysqlDb = new MysqlDb();
+        Conexion mysqlDb = new Conexion();
         Connection connection = mysqlDb.getConnection();
         try {
             String sql = "SELECT * FROM gestionsolicitud";
@@ -58,7 +58,7 @@ public class GestionSolicitudDAO {
 
     public void update(GestionSolicitud solicitud) {
 
-        MysqlDb mysqlDb = new MysqlDb();
+        Conexion mysqlDb = new Conexion();
         Connection connection = mysqlDb.getConnection();
         try {
             PreparedStatement statement = connection.prepareStatement("UPDATE gestionsolicitud SET estadosolicitud = ?, respuestasolicitud = ?, administrador = ? WHERE idsolicitud = ?");
@@ -73,7 +73,7 @@ public class GestionSolicitudDAO {
     }
 
     public void delete(int id) {
-        MysqlDb mysqlDb = new MysqlDb();
+        Conexion mysqlDb = new Conexion();
         Connection connection = mysqlDb.getConnection();
         try {
             PreparedStatement statement = connection.prepareStatement("DELETE FROM gestionsolicitud WHERE idsolicitud=?");
