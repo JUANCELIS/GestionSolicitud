@@ -20,11 +20,14 @@ public class UsuarioDAO {
         Conexion2 mysqlDb = new Conexion2();
         Connection connection = mysqlDb.conectar();
         try {
-            PreparedStatement statement = connection.prepareStatement("INSERT INTO usuario VALUES (?,?,?,?)");
-            statement.setString(1, user.getNombre());
-            statement.setString(2, user.getApellido());
-            statement.setString(3, user.getCorreo());
-            statement.setString(4, user.getContra1());
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO usuario VALUES (?,?,?,?,?,?,?)");
+            statement.setInt(1, user.getId());
+            statement.setInt(2, user.getTipousuario());
+            statement.setString(3, user.getNombre());
+            statement.setString(4, user.getApellido());
+            statement.setString(5, user.getCorreo());
+            statement.setString(6, user.getContra1());
+            statement.setString(7, user.getTipodocumento());
             statement.executeUpdate();
             connection.close();
         } catch (Exception e) {
@@ -45,10 +48,13 @@ public class UsuarioDAO {
             while (resultado.next()) {
                 System.out.println("entro al while");
                 usuarios.add(new Usuario(
+                        resultado.getInt("id"),
+                        resultado.getInt("tipousuario"),
                         resultado.getString("nombre"),
                         resultado.getString("apellido"),
                         resultado.getString("correo"),
-                        resultado.getString("clave")));
+                        resultado.getString("clave"),
+                        resultado.getString("tipodocumento")));
             }
 
             connection.close();

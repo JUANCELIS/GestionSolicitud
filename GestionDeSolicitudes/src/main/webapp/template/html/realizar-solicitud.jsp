@@ -48,7 +48,7 @@
 
 
                 <li class="nav-item active">
-                    <a class="nav-link" href="historialusuario.html">
+                    <a class="nav-link" href="realizar-solicitud.jsp">
                         <i class="fas fa-fw fa-folder"></i>
                         <span>Mis Solicitudes</span></a>
                 </li>   
@@ -75,10 +75,10 @@
                         <div class="container-fluid">
 
                             <!-- Page Heading -->
-                            <form action="administrador.jsp" method="post" >
+                            <form action="historialusuario.html" method="post" >
                                 <label>REALICE SU SOLICITUD: </label>
                                 <br>
-                                <input class="controles" type="text" size="8" maxlength="10" value="10000001" name="codigo">
+                                <input class="controles" type="text" size="8" maxlength="10" value="" name="codigo">
                                 <br>
                                 <label>TIPO DE SOLICITUD: </label>
                                 <br>
@@ -102,6 +102,8 @@
                                 <input class="boton" type="submit" name="btnEnviar"  value="Enviar">  
                                 <input class="boton" type="reset" name="btnBorar" value="Borrar">
                             </form>
+
+                              
                         </div>
                         <!-- /.container-fluid -->
 

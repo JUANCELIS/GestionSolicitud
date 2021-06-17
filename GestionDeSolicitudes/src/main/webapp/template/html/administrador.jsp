@@ -57,7 +57,7 @@
 
                 %>
 
-                <form action="historial.jsp" method="post">
+                <form action="historialadministrador.jsp" method="post">
                     <h4>SOLICITUD</h4>
                     <br>
                     <label>TIPO DE SOLICITUD: </label>

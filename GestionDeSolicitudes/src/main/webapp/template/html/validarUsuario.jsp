@@ -9,11 +9,11 @@
 <%@page import="modelo.UsuarioDAO"%>
 
 <%
-    String email= request.getParameter("email");
+    String email = request.getParameter("email");
     String clave = request.getParameter("clave");
 
     System.out.println("email" + email + "clave" + clave);
-    
+
     UsuarioDAO user = new UsuarioDAO();
     ArrayList<Usuario> users = new ArrayList();
     users = user.read();
@@ -22,12 +22,20 @@
         if (x.getContra1().equals(clave) && x.getCorreo().equals(email)) {
             correcto = true;
             
+
         }
-        
+
     }
 %>
-<% if(correcto){%>
-<jsp:forward page="historialusuario.html"/>
-<%}else{%>
+
+
+<% if (correcto) {
+    System.out.println("correcto " + email );
+        if (email.equals("juandiegocbl@ufps.edu.co") ){%>
+       <jsp:forward page="historialadministrador.jsp"/>
+         <%} else {%>
+       <jsp:forward page="historialusuario.html"/>
+       <% }%>
+<%} else{%>
 <jsp:forward page="../../index.html"/>
 <%}%>

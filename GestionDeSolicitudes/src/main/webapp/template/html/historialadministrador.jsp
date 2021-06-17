@@ -142,7 +142,7 @@
                                     String ob = request.getParameter("observaciones");
                                 %>              
                                 <section class ="form-admin-historial">
-                                    <form >
+                                    <form action = "administrador.jsp">
                                         <table id="tabla" class="table table-striped table-bordered" cellspacing="0" name="tabla" BORDER WIDTH="100%" aling="center">
                                             <thead>
                                                 <TR>
@@ -157,7 +157,7 @@
                                             <TD><%=fecha%></TD>
                                             <TD> <%=cod%></TD>       
                                             <TD><%=asunto%></TD>
-                                            <TD> <button class = "boton" >Ver mas</button></TD>
+                                            <TD> <button type ="sumbit" class = "boton" >Ver mas</button></TD>
                                             </TR>                           
                                             </tbody>
                                         </table>

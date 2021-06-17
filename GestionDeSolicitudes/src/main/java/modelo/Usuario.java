@@ -13,26 +13,96 @@ import java.util.Objects;
  */
 public class Usuario {
     
-    int tipo;
+    int id;
+    int tipousuario;
     String nombre;
     String apellido;
     String correo;
     String contra1;
+    String tipodocumento;
 
-    public Usuario(String nombre, String apellido, String correo, String contra1) {
+    
+        public Usuario(int id, int tipousuario, String nombre, String apellido, String correo, String contra1, String tipodocumento) {
+        this.id = id;
+        this.tipousuario = tipousuario;
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
-        this.contra1 = contra1;
+        this.contra1 = contra1; 
+        this.tipodocumento = tipodocumento;
     }
-    
-        public int getTipo() {
-        return tipo;
+    @Override
+    public String toString() {
+        return "Usuario{" + "id=" + id + ", tipousuario=" + tipousuario + ", nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", contra1=" + contra1 +  ", tipodocumento=" + tipodocumento + '}';
     }
 
-    public void setTipo(int tipo) {
-        this.tipo = tipo;
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 13 * hash + this.id;
+        hash = 13 * hash + this.tipousuario;
+        hash = 13 * hash + Objects.hashCode(this.nombre);
+        hash = 13 * hash + Objects.hashCode(this.apellido);
+        hash = 13 * hash + Objects.hashCode(this.correo);
+        hash = 13 * hash + Objects.hashCode(this.contra1);
+        
+        hash = 13 * hash + Objects.hashCode(this.tipodocumento);
+        return hash;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Usuario other = (Usuario) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        if (this.tipousuario != other.tipousuario) {
+            return false;
+        }
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        if (!Objects.equals(this.apellido, other.apellido)) {
+            return false;
+        }
+        if (!Objects.equals(this.correo, other.correo)) {
+            return false;
+        }
+        if (!Objects.equals(this.contra1, other.contra1)) {
+            return false;
+        }
+     
+        if (!Objects.equals(this.tipodocumento, other.tipodocumento)) {
+            return false;
+        }
+        return true;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getTipousuario() {
+        return tipousuario;
+    }
+
+    public void setTipousuario(int tipousuario) {
+        this.tipousuario = tipousuario;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -65,47 +135,16 @@ public class Usuario {
         this.contra1 = contra1;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 89 * hash + Objects.hashCode(this.nombre);
-        hash = 89 * hash + Objects.hashCode(this.apellido);
-        hash = 89 * hash + Objects.hashCode(this.correo);
-        hash = 89 * hash + Objects.hashCode(this.contra1);
-        return hash;
+
+
+    public String getTipodocumento() {
+        return tipodocumento;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Usuario other = (Usuario) obj;
-        if (!Objects.equals(this.nombre, other.nombre)) {
-            return false;
-        }
-        if (!Objects.equals(this.apellido, other.apellido)) {
-            return false;
-        }
-        if (!Objects.equals(this.correo, other.correo)) {
-            return false;
-        }
-        if (!Objects.equals(this.contra1, other.contra1)) {
-            return false;
-        }
-        return true;
+    public void setTipodocumento(String tipodocumento) {
+        this.tipodocumento = tipodocumento;
     }
 
-    @Override
-    public String toString() {
-        return "Usuario{" + "nombre=" + nombre + ", apellido=" + apellido + ", correo=" + correo + ", contra1=" + contra1 + '}';
-    }
-    
+
   
 }
